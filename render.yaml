@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: studio-lins
+    runtime: static
+    staticPublishPath: .
+    routes:
+      - type: redirect
+        source: /products/*
+        destination: /
+      - type: redirect
+        source: /politica-de-privacidade
+        destination: /
+      - type: redirect
+        source: /termos-3-condicoes
+        destination: /

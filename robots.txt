@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://studiolins.com.br/sitemap.xml
