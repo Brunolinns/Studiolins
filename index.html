@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MRRGDNMV');</script>
+<!-- End Google Tag Manager -->
 <title>Studio Lins | Especialistas em Loiros e Mega Hair — Zona Norte, São Paulo</title>
 <meta name="description" content="Cabeleireiros especialistas em loiros e mega hair na Zona Norte de São Paulo. Há +32 anos, Cidinha Lins transforma cabelos com descoloração saudável. Nota 4,9 no Google.">
 <link rel="canonical" href="https://studiolins.com.br/">
@@ -194,6 +197,9 @@ body.modal-open .fab{display:none}
 </style>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MRRGDNMV" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <!-- ============ HERO ============ -->
 <div class="hero">
@@ -504,8 +510,15 @@ body.modal-open .fab{display:none}
     }
     var msg = 'Olá! Me chamo ' + nome + ', acabei de me cadastrar pelo site e gostaria de agendar: ' + serv + '.';
     document.getElementById('mZapLink').href = 'https://wa.me/' + WHATS + '?text=' + encodeURIComponent(msg);
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({event:'lead_precheckout', servico: serv});
     mForm.style.display = 'none';
     mDone.style.display = 'block';
+  });
+
+  document.getElementById('mZapLink').addEventListener('click', function(){
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({event:'whatsapp_redirect', servico: document.getElementById('fServ').value});
   });
 
   /* ---------- Antes / Depois ---------- */
