@@ -17,14 +17,14 @@ Página estática publicada via GitHub + Render. Fluxo de edição: alterar arqu
 3. Propagação leva de minutos a algumas horas. O certificado HTTPS é automático.
 
 ## 4. Leads na planilha (Google Sheets)
-1. Crie uma planilha no Google Sheets com o nome `Leads Studio Lins` e cabeçalhos na linha 1: `quando | nome | whatsapp | servico | origem`.
+1. Crie uma planilha no Google Sheets com o nome `Leads Studio Lins` e cabeçalhos na linha 1: `quando | nome | whatsapp | email | servico | origem`.
 2. Na planilha: **Extensões → Apps Script**, apague o conteúdo e cole:
 
 ```javascript
 function doPost(e) {
   var linha = JSON.parse(e.postData.contents);
   SpreadsheetApp.getActiveSpreadsheet().getSheets()[0]
-    .appendRow([linha.quando, linha.nome, linha.whatsapp, linha.servico, linha.origem]);
+    .appendRow([linha.quando, linha.nome, linha.whatsapp, linha.email, linha.servico, linha.origem]);
   return ContentService.createTextOutput("ok");
 }
 ```

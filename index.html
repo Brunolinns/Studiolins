@@ -436,6 +436,7 @@ body.modal-open .fab{display:none}
       <p class="sub">Preencha rapidinho e continue direto no WhatsApp com a equipe do Studio Lins.</p>
       <div class="field"><label for="fNome">Seu nome</label><input id="fNome" type="text" placeholder="Como podemos te chamar?" autocomplete="name"></div>
       <div class="field"><label for="fZap">Seu WhatsApp</label><input id="fZap" type="tel" placeholder="(11) 9 0000-0000" autocomplete="tel" inputmode="tel"></div>
+      <div class="field"><label for="fMail">Seu e-mail</label><input id="fMail" type="email" placeholder="seunome@email.com" autocomplete="email" inputmode="email"></div>
       <div class="field"><label for="fServ">Serviço de interesse</label>
         <select id="fServ">
           <option>Mechas</option>
@@ -490,10 +491,12 @@ body.modal-open .fab{display:none}
   document.getElementById('mSend').addEventListener('click', function(){
     var nome = document.getElementById('fNome').value.trim();
     var zap  = document.getElementById('fZap').value.trim();
+    var mail = document.getElementById('fMail').value.trim();
     var serv = document.getElementById('fServ').value;
     if(!nome){ document.getElementById('fNome').focus(); return; }
     if(!zap){ document.getElementById('fZap').focus(); return; }
-    var lead = {nome:nome, whatsapp:zap, servico:serv, quando:new Date().toISOString(), origem:location.href};
+    if(!mail || mail.indexOf('@') < 0){ document.getElementById('fMail').focus(); return; }
+    var lead = {nome:nome, whatsapp:zap, email:mail, servico:serv, quando:new Date().toISOString(), origem:location.href};
     leads.push(lead);
     if(SHEETS_WEBHOOK){
       try{ fetch(SHEETS_WEBHOOK, {method:'POST', mode:'no-cors', headers:{'Content-Type':'text/plain'}, body: JSON.stringify(lead)}); }
