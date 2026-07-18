@@ -76,7 +76,7 @@ header .mini:hover{border-color:var(--gold-2);color:var(--gold-2)}
 /* Hero */
 .hero{position:relative;min-height:92svh;display:flex;align-items:flex-end;padding:0;overflow:hidden}
 .hero .bg{position:absolute;inset:0;background:url('assets/hero.webp') center 22%/cover no-repeat}
-.hero .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,13,9,.42) 0%,rgba(18,13,9,.12) 34%,rgba(18,13,9,.62) 66%,rgba(18,13,9,.93) 100%)}
+.hero .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,13,9,.58) 0%,rgba(18,13,9,.38) 34%,rgba(18,13,9,.78) 66%,rgba(18,13,9,.95) 100%)}
 .hero .inner{position:relative;z-index:2;width:100%;max-width:1060px;margin:0 auto;padding:120px 22px 56px;color:#fff}
 .hero h1{font-size:clamp(2.15rem,7.2vw,3.7rem);max-width:15ch;margin-bottom:16px;text-wrap:balance}
 .hero h1 em{font-style:italic;color:var(--gold-2)}
@@ -109,7 +109,7 @@ header .mini:hover{border-color:var(--gold-2);color:var(--gold-2)}
 .ba-wrap .antes{clip-path:inset(0 calc(100% - var(--pos,50%)) 0 0)}
 .ba-handle{position:absolute;top:0;bottom:0;left:var(--pos,50%);width:2px;background:var(--gold-2);z-index:3;pointer-events:none}
 .ba-handle::after{content:"◂ ▸";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--gold-2);color:#231a08;font-size:.68rem;font-weight:700;letter-spacing:.05em;border-radius:999px;padding:7px 9px;white-space:nowrap;box-shadow:0 4px 14px rgba(0,0,0,.35)}
-.ba-wrap input[type=range]{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;z-index:4;margin:0;-webkit-appearance:none;appearance:none;touch-action:pan-y}
+.ba-grip{position:absolute;top:0;bottom:0;left:var(--pos,50%);width:56px;transform:translateX(-50%);z-index:4;background:transparent;border:0;padding:0;cursor:ew-resize;touch-action:none;-webkit-tap-highlight-color:transparent}
 .ba-tag{position:absolute;top:12px;font-size:.66rem;font-weight:700;letter-spacing:.14em;padding:5px 10px;border-radius:999px;z-index:2}
 .ba-tag.t-antes{left:12px;background:rgba(18,13,9,.72);color:#fff}
 .ba-tag.t-depois{right:12px;background:var(--gold-2);color:#231a08}
@@ -266,53 +266,65 @@ body.modal-open .fab{display:none}
     <div class="center rv">
       <span class="eyebrow">Antes &amp; Depois</span>
       <h2>A prova está nos fios</h2>
-      <p class="lead" style="margin-top:14px">Arraste a linha dourada e veja cada transformação acontecer.</p>
+      <p class="lead" style="margin-top:14px">Toque na foto ou arraste a linha dourada para comparar — e use as setas para ver a próxima transformação.</p>
     </div>
   </div>
   <div class="ba-strip">
     <!-- pares -->
     <div class="ba-card"><div class="ba-wrap" style="--pos:50%">
-      <img class="depois" src="assets/depois-1.webp" alt="Depois: loiro claro liso e saudável">
-      <img class="antes" src="assets/antes-1.webp" alt="Antes">
+      <img class="depois" src="assets/depois-7.webp" alt="Depois: ruivo intenso e brilhante">
+      <img class="antes" src="assets/antes-7.webp" alt="Antes">
       <span class="ba-tag t-antes">ANTES</span><span class="ba-tag t-depois">DEPOIS</span>
       <div class="ba-handle"></div>
-      <input type="range" min="0" max="100" value="50" aria-label="Comparar antes e depois">
+      <button class="ba-grip" aria-label="Arrastar comparação de antes e depois"></button>
     </div></div>
     <div class="ba-card"><div class="ba-wrap" style="--pos:50%">
       <img class="depois" src="assets/depois-2.webp" alt="Depois: loiro ondulado luminoso">
       <img class="antes" src="assets/antes-2.webp" alt="Antes">
       <span class="ba-tag t-antes">ANTES</span><span class="ba-tag t-depois">DEPOIS</span>
       <div class="ba-handle"></div>
-      <input type="range" min="0" max="100" value="50" aria-label="Comparar antes e depois">
+      <button class="ba-grip" aria-label="Arrastar comparação de antes e depois"></button>
     </div></div>
     <div class="ba-card"><div class="ba-wrap" style="--pos:50%">
       <img class="depois" src="assets/depois-3.webp" alt="Depois: bob loiro com movimento">
       <img class="antes" src="assets/antes-3.webp" alt="Antes">
       <span class="ba-tag t-antes">ANTES</span><span class="ba-tag t-depois">DEPOIS</span>
       <div class="ba-handle"></div>
-      <input type="range" min="0" max="100" value="50" aria-label="Comparar antes e depois">
+      <button class="ba-grip" aria-label="Arrastar comparação de antes e depois"></button>
     </div></div>
     <div class="ba-card"><div class="ba-wrap" style="--pos:50%">
       <img class="depois" src="assets/depois-4.webp" alt="Depois: loiro platinado acinzentado">
       <img class="antes" src="assets/antes-4.webp" alt="Antes">
       <span class="ba-tag t-antes">ANTES</span><span class="ba-tag t-depois">DEPOIS</span>
       <div class="ba-handle"></div>
-      <input type="range" min="0" max="100" value="50" aria-label="Comparar antes e depois">
+      <button class="ba-grip" aria-label="Arrastar comparação de antes e depois"></button>
     </div></div>
     <div class="ba-card"><div class="ba-wrap" style="--pos:50%">
       <img class="depois" src="assets/depois-5.webp" alt="Depois: loiro dourado com ondas">
       <img class="antes" src="assets/antes-5.webp" alt="Antes">
       <span class="ba-tag t-antes">ANTES</span><span class="ba-tag t-depois">DEPOIS</span>
       <div class="ba-handle"></div>
-      <input type="range" min="0" max="100" value="50" aria-label="Comparar antes e depois">
+      <button class="ba-grip" aria-label="Arrastar comparação de antes e depois"></button>
     </div></div>
     <div class="ba-card"><div class="ba-wrap" style="--pos:50%">
       <img class="depois" src="assets/depois-6.webp" alt="Depois: loiro platinado liso">
       <img class="antes" src="assets/antes-6.webp" alt="Antes">
       <span class="ba-tag t-antes">ANTES</span><span class="ba-tag t-depois">DEPOIS</span>
       <div class="ba-handle"></div>
-      <input type="range" min="0" max="100" value="50" aria-label="Comparar antes e depois">
+      <button class="ba-grip" aria-label="Arrastar comparação de antes e depois"></button>
     </div></div>
+    <div class="ba-card"><div class="ba-wrap" style="--pos:50%">
+      <img class="depois" src="assets/depois-8.webp" alt="Depois: loiro iluminado com movimento">
+      <img class="antes" src="assets/antes-8.webp" alt="Antes">
+      <span class="ba-tag t-antes">ANTES</span><span class="ba-tag t-depois">DEPOIS</span>
+      <div class="ba-handle"></div>
+      <button class="ba-grip" aria-label="Arrastar comparação de antes e depois"></button>
+    </div></div>
+  </div>
+  <div class="g-nav">
+    <button id="baPrev" aria-label="Transformação anterior">‹</button>
+    <span class="g-count" id="baCount">1 / 7</span>
+    <button id="baNext" aria-label="Próxima transformação">›</button>
   </div>
 </section>
 
@@ -523,8 +535,54 @@ body.modal-open .fab{display:none}
 
   /* ---------- Antes / Depois ---------- */
   document.querySelectorAll('.ba-wrap').forEach(function(w){
-    var r = w.querySelector('input[type=range]');
-    r.addEventListener('input', function(){ w.style.setProperty('--pos', r.value + '%'); });
+    function setPos(clientX){
+      var rect = w.getBoundingClientRect();
+      var p = Math.max(0, Math.min(100, (clientX - rect.left) / rect.width * 100));
+      w.style.setProperty('--pos', p.toFixed(1) + '%');
+    }
+    var grip = w.querySelector('.ba-grip');
+    var dragging = false;
+    grip.addEventListener('pointerdown', function(e){
+      dragging = true;
+      grip.setPointerCapture(e.pointerId);
+      e.preventDefault();
+    });
+    grip.addEventListener('pointermove', function(e){ if(dragging) setPos(e.clientX); });
+    grip.addEventListener('pointerup', function(){ dragging = false; });
+    grip.addEventListener('pointercancel', function(){ dragging = false; });
+    /* tocar em qualquer ponto da foto também move a linha */
+    w.addEventListener('click', function(e){
+      if(e.target === grip) return;
+      setPos(e.clientX);
+    });
+  });
+
+  /* setas da faixa de transformações */
+  var baStrip  = document.querySelector('.ba-strip');
+  var baCards  = Array.prototype.slice.call(baStrip.querySelectorAll('.ba-card'));
+  var baCount  = document.getElementById('baCount');
+  var baCur    = 0;
+  function baGo(n){
+    baCur = Math.max(0, Math.min(baCards.length - 1, n));
+    var c = baCards[baCur];
+    baStrip.scrollTo({left: c.offsetLeft - (baStrip.clientWidth - c.clientWidth) / 2, behavior:'smooth'});
+    baCount.textContent = (baCur + 1) + ' / ' + baCards.length;
+  }
+  document.getElementById('baPrev').addEventListener('click', function(){ baGo(baCur - 1); });
+  document.getElementById('baNext').addEventListener('click', function(){ baGo(baCur + 1); });
+  /* mantém o contador certo se a pessoa rolar a faixa com o dedo */
+  var baTimer;
+  baStrip.addEventListener('scroll', function(){
+    clearTimeout(baTimer);
+    baTimer = setTimeout(function(){
+      var centro = baStrip.scrollLeft + baStrip.clientWidth / 2, melhor = 0, dist = Infinity;
+      baCards.forEach(function(c, i){
+        var d = Math.abs((c.offsetLeft + c.clientWidth / 2) - centro);
+        if(d < dist){ dist = d; melhor = i; }
+      });
+      baCur = melhor;
+      baCount.textContent = (baCur + 1) + ' / ' + baCards.length;
+    }, 120);
   });
 
   /* ---------- Galeria 3D (coverflow) ---------- */
